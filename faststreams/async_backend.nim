@@ -12,7 +12,7 @@ elif faststreams_async_backend in ["std", "asyncdispatch"]:
   import std/[asyncfutures, asyncmacro]
   export asyncfutures, asyncmacro
 
-  template faststreamsAwait*(awaited: Future[T]): untyped =
+  template faststreamsAwait*[T](awaited: Future[T]): untyped =
     # TODO revisit after https://github.com/nim-lang/Nim/pull/12085/ is merged
     let f = awaited
     yield f
